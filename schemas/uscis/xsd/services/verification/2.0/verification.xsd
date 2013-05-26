@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:vis="http://uscis.gov/uscis/xsd/services/verification/2.0/verification"
+	 xmlns:ex="http://uscis.gov/uscis/xsd/services/exceptions/0.1"
+	 xmlns:scr="http://niem.gov/niem/domains/screening/2.0"
+	 xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+	 xmlns:im="http://niem.gov/niem/domains/immigration/2.0"
+	 xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+	 targetNamespace="http://uscis.gov/uscis/xsd/services/verification/2.0/verification"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../../../../niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://uscis.gov/uscis/xsd/services/exceptions/0.1" schemaLocation="../../exceptions/0.1/exceptions.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/screening/2.0" schemaLocation="../../../../../niem/domains/screening/2.0/screening.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../../../../niem/niem-core/2.0/niem-core.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/immigration/2.0" schemaLocation="../../../../../niem/domains/immigration/2.0/immigration.xsd"/>
+	<element name="SourceSystemID" type="niem-xsd:string"/>
+	<element name="SourceUserID" type="niem-xsd:string"/>
+	<element name="SourceTransactionID" type="niem-xsd:string"/>
+	<element name="QueryTarget" type="niem-xsd:string"/>
+	<element name="PersonSearchCriteria">
+		<complexType>
+			<sequence>
+				<element ref="nc:Person" minOccurs="0"/>
+				<element ref="nc:PersonSSNIdentification" minOccurs="0"/>
+				<element ref="im:AlienNumber" minOccurs="0"/>
+				<element ref="scr:VisaNumberID" minOccurs="0"/>
+				<element ref="vis:VisaFoilNumber" minOccurs="0"/>
+				<element ref="vis:SevisID" minOccurs="0"/>
+				<element ref="nc:PassportNumberIdentification" minOccurs="0"/>
+				<element ref="im:CitizenshipCertificateIdentification" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="VerificationRequest">
+		<complexType>
+			<sequence>
+				<element ref="vis:SourceSystemID"/>
+				<element ref="vis:SourceUserID"/>
+				<element ref="vis:SourceTransactionID"/>
+				<element ref="vis:QueryTarget"/>
+				<element ref="vis:PersonSearchCriteria"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="VerificationResponse">
+		<complexType>
+			<sequence>
+				<element ref="vis:SourceSystemID"/>
+				<element ref="vis:SourceTransactionID"/>
+				<element ref="vis:QueryTarget"/>
+				<choice>
+					<element ref="vis:PersonSearchResult" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ex:ESBException"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PersonSearchResult">
+		<complexType>
+			<sequence>
+				<element ref="nc:Person" minOccurs="0"/>
+				<element ref="nc:PersonSSNIdentification" minOccurs="0"/>
+				<element ref="im:AlienNumber" minOccurs="0"/>
+				<element ref="im:AlienBirthCountryName" minOccurs="0"/>
+				<element ref="im:AlienImmigrationStatus" minOccurs="0"/>
+				<element ref="vis:AdmittedDate" minOccurs="0"/>
+				<element ref="vis:NaturalizationVerification" minOccurs="0"/>
+				<element ref="vis:PassportVerification" minOccurs="0"/>
+				<element ref="vis:VisaVerification" minOccurs="0"/>
+				<element ref="vis:AlienStudentVerification" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="StatusChangeDate" type="nc:DateType" nillable="true"/>
+	<complexType name="AlienStudentVerificationType">
+		<annotation>
+			<documentation>TBD</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="im:AlienStudentType">
+				<sequence>
+					<element ref="vis:SevisID"/>
+					<element ref="im:ImmigrationStatusCode" minOccurs="0"/>
+					<element ref="scr:VisaNumberID" minOccurs="0"/>
+					<element ref="vis:StatusChangeDate" minOccurs="0"/>
+					<element ref="scr:PortOfEntryCode" minOccurs="0"/>
+					<element ref="scr:EntryDate" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="AlienStudentVerification" type="vis:AlienStudentVerificationType"/>
+	<element name="SevisID" type="nc:IdentificationType"/>
+	<element name="AdmittedDate" type="nc:DateType"/>
+	<element name="VisaFoilNumber" type="niem-xsd:string"/>
+	<complexType name="VisaVerificationType">
+		<complexContent>
+			<extension base="scr:VisaType">
+				<sequence>
+					<element ref="vis:VisaFoilNumber" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:PassportNumberIdentification" minOccurs="0"/>
+					<element ref="nc:PersonDigitalImage" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="VisaVerification" type="vis:VisaVerificationType"/>
+	<element name="PassportVerification" type="nc:PassportType"/>
+	<element name="NaturalizationVerification">
+		<complexType>
+			<sequence>
+				<element ref="im:CitizenshipCertificateIdentification" minOccurs="0"/>
+				<element ref="im:CitizenshipNaturalizationDate" minOccurs="0"/>
+				<element ref="nc:Person" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

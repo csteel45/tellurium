@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns5:VerificationRequest xmlns:ns1="http://niem.gov/niem/structures/2.0" xmlns:ns2="http://niem.gov/niem/niem-core/2.0" xmlns:ns3="http://niem.gov/niem/domains/immigration/2.0" xmlns:ns4="http://niem.gov/niem/domains/screening/2.0" xmlns:ns5="http://uscis.gov/uscis/xsd/services/verification/2.0/verification" xmlns:ns6="http://niem.gov/niem/appinfo/2.0" xmlns:ns7="http://uscis.gov/uscis/xsd/services/exceptions/0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uscis.gov/uscis/xsd/services/verification/2.0/verification">
+    <ns5:SourceSystemID>VIS</ns5:SourceSystemID>
+    <ns5:SourceUserID>UNIT TEST HARNESS</ns5:SourceUserID>
+    <ns5:SourceTransactionID>vs.ut.C4.TestSuite.TC8-1186690631146</ns5:SourceTransactionID>
+    <ns5:QueryTarget>CLAIMS4</ns5:QueryTarget>
+    <ns5:PersonSearchCriteria>
+        <ns2:Person xsi:nil="true"/>
+        <ns2:PersonSSNIdentification xsi:nil="true"/>
+        <ns3:AlienNumber>
+            <ns2:IdentificationID>A0282528511</ns2:IdentificationID>
+        </ns3:AlienNumber>
+        <ns4:VisaNumberID xsi:nil="true"/>
+        <ns2:PassportNumberIdentification xsi:nil="true"/>
+        <ns3:CitizenshipCertificateIdentification xsi:nil="true"/>
+    </ns5:PersonSearchCriteria>
+</ns5:VerificationRequest>

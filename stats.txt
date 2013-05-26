@@ -1,0 +1,7 @@
+Simultaneous,null,1,0,0.5
+Simultaneous,null,48,0,0.5416667
+Sequential,null,150,2.2371202
+Simultaneous,null,150,0,0.49666667
+Simultaneous,null,200,0,1.7681062
+Simultaneous,null,200,0,0.519315
+Simultaneous,null,200,0,0.534705
