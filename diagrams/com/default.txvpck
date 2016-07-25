@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodeSet version="1.0">
+    <view uin="idfhidtf6hg8vpsf6hgdw08">
+        <property name="$metaclass" value="Package Diagram"/>
+        <property name="@__options" value=""/>
+        <reference df-class-name="reference" referencedUin="design:view:::idjqe9wf6hg8vpsf6hgdw2e">
+            <property name="$shortcutReference" value="true"/>
+            <property name="@__fqn" value="uml:package:Tellurium:src:com.tibco"/>
+            <property name="bounds" value="10,10,83,120"/>
+        </reference>
+        <property name="$defaultDiagram" value=""/>
+    </view>
+</nodeSet>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='AccountMaintenanceService' targetNamespace='http://gov.cis.edms.service.account.maintenance' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://bo.edms.cis.gov/jaws' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://gov.cis.edms.service.account.maintenance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://bo.edms.cis.gov/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://gov.cis.edms.service.account.maintenance' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://bo.edms.cis.gov/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://gov.cis.edms.service.account.maintenance'/>
+   <complexType name='Name'>
+    <sequence>
+     <element name='firstName' nillable='true' type='string'/>
+     <element name='lastName' nillable='true' type='string'/>
+     <element name='middleName' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace='http://gov.cis.edms.service.account.maintenance' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://bo.edms.cis.gov/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://gov.cis.edms.service.account.maintenance' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://bo.edms.cis.gov/jaws'/>
+   <complexType name='Credential'>
+    <sequence>
+     <element name='agentName' nillable='true' type='string'/>
+     <element name='secret' nillable='true' type='string'/>
+     <element name='userName' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='MaintenanceResponse'>
+    <sequence>
+     <element name='statusCode' nillable='true' type='string'/>
+     <element name='statusMessage' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='Organization'>
+    <sequence>
+     <element name='ID' nillable='true' type='string'/>
+     <element name='accessRestrictions' nillable='true' type='string'/>
+     <element name='accountNumber' nillable='true' type='string'/>
+     <element name='companyName' nillable='true' type='string'/>
+     <element name='feinNumber' nillable='true' type='string'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='receiptNumbers' nillable='true' type='string'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='secondaryAccounts' nillable='true' type='string'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='secondaryFEINS' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='Person'>
+    <sequence>
+     <element name='ID' nillable='true' type='string'/>
+     <element name='accessControl' nillable='true' type='string'/>
+     <element name='accessRestrictions' nillable='true' type='string'/>
+     <element name='accountNumber' nillable='true' type='string'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='aliasStr' nillable='true' type='string'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='aliases' nillable='true' type='ns2:Name'/>
+     <element name='countryOfBirth' nillable='true' type='string'/>
+     <element name='dateOfBirth' nillable='true' type='dateTime'/>
+     <element name='firstName' nillable='true' type='string'/>
+     <element name='gender' nillable='true' type='string'/>
+     <element name='lastName' nillable='true' type='string'/>
+     <element name='middleName' nillable='true' type='string'/>
+     <element name='primaryANumber' nillable='true' type='string'/>
+     <element name='primaryEnumerator' nillable='true' type='string'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='receiptNumbers' nillable='true' type='string'/>
+     <element maxOccurs='unbounded' minOccurs='0' name='secondaryAccounts' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='AccountMaintenance_createOrUpdateOrganization'>
+  <part name='Organization_1' type='tns:Organization'/>
+  <part name='Credential_2' type='tns:Credential'/>
+ </message>
+ <message name='AccountMaintenance_createOrUpdateOrganizationResponse'>
+  <part name='result' type='tns:MaintenanceResponse'/>
+ </message>
+ <message name='AccountMaintenance_createOrUpdatePerson'>
+  <part name='Person_1' type='tns:Person'/>
+  <part name='Credential_2' type='tns:Credential'/>
+ </message>
+ <message name='AccountMaintenance_createOrUpdatePersonResponse'>
+  <part name='result' type='tns:MaintenanceResponse'/>
+ </message>
+ <portType name='AccountMaintenance'>
+  <operation name='createOrUpdateOrganization' parameterOrder='Organization_1 Credential_2'>
+   <input message='tns:AccountMaintenance_createOrUpdateOrganization'/>
+   <output message='tns:AccountMaintenance_createOrUpdateOrganizationResponse'/>
+  </operation>
+  <operation name='createOrUpdatePerson' parameterOrder='Person_1 Credential_2'>
+   <input message='tns:AccountMaintenance_createOrUpdatePerson'/>
+   <output message='tns:AccountMaintenance_createOrUpdatePersonResponse'/>
+  </operation>
+ </portType>
+ <binding name='AccountMaintenanceBinding' type='tns:AccountMaintenance'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='createOrUpdateOrganization'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://gov.cis.edms.service.account.maintenance' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://gov.cis.edms.service.account.maintenance' use='literal'/>
+   </output>
+  </operation>
+  <operation name='createOrUpdatePerson'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://gov.cis.edms.service.account.maintenance' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://gov.cis.edms.service.account.maintenance' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='AccountMaintenanceService'>
+  <port binding='tns:AccountMaintenanceBinding' name='AccountMaintenancePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

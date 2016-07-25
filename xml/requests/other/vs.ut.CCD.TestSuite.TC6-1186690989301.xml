@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns5:VerificationRequest xmlns:ns1="http://niem.gov/niem/structures/2.0" xmlns:ns2="http://niem.gov/niem/niem-core/2.0" xmlns:ns3="http://niem.gov/niem/domains/immigration/2.0" xmlns:ns4="http://niem.gov/niem/domains/screening/2.0" xmlns:ns5="http://uscis.gov/uscis/xsd/services/verification/2.0/verification" xmlns:ns6="http://niem.gov/niem/appinfo/2.0" xmlns:ns7="http://uscis.gov/uscis/xsd/services/exceptions/0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uscis.gov/uscis/xsd/services/verification/2.0/verification">
+    <ns5:SourceSystemID>VIS</ns5:SourceSystemID>
+    <ns5:SourceUserID>UNIT TEST HARNESS</ns5:SourceUserID>
+    <ns5:SourceTransactionID>vs.ut.CCD.TestSuite.TC6-1186690989301</ns5:SourceTransactionID>
+    <ns5:QueryTarget>CCD</ns5:QueryTarget>
+    <ns5:PersonSearchCriteria>
+        <ns2:Person>
+            <ns2:PersonName>
+                <ns2:PersonGivenName>SABAH K</ns2:PersonGivenName>
+                <ns2:PersonSurName>MOHAMMED</ns2:PersonSurName>
+            </ns2:PersonName>
+            <ns2:PersonName>
+                <ns2:PersonGivenName>SABAH K</ns2:PersonGivenName>
+                <ns2:PersonSurName>MOHAMMED</ns2:PersonSurName>
+            </ns2:PersonName>
+        </ns2:Person>
+        <ns2:PersonSSNIdentification xsi:nil="true"/>
+        <ns3:AlienNumber xsi:nil="true"/>
+        <ns4:VisaNumberID xsi:nil="true"/>
+        <ns5:VisaFoilNumber>48467040</ns5:VisaFoilNumber>
+        <ns2:PassportNumberIdentification xsi:nil="true"/>
+        <ns3:CitizenshipCertificateIdentification xsi:nil="true"/>
+    </ns5:PersonSearchCriteria>
+</ns5:VerificationRequest>

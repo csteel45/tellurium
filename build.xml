@@ -1,0 +1,165 @@
+<?xml version="1.0" standalone="yes"?>
+<project name="Tellurium" basedir="." default="run">
+
+	<property name="src" value="src" />
+	<property name="classes" value="classes" />
+	<property name="lib" value="lib" />
+	<property name="images" value="images" />
+	<property name="config" value="config" />
+	<property name="certs" value="certs" />
+	<property name="schemas" value="schemas" />
+	<property name="xml" value="xml" />
+	<property name="docs" value="docs" />
+	<property name="javadocs" value="docs/api" />
+	<property name="reports" value="reports" />
+	<property name="backup.dir" value="backups" />
+	<property name="jarfile" value="tellurium" />
+	<property name="browser" value="C:/Program Files/Internet Explorer/iexplore.exe" />
+	<property name="generated" value="generated" />
+	<property name="package" value="com.tibco.vs.ut" />
+	<property name="schemafile" value="${schemas}/uscis/xsd/services/verification/2.0/verification.xsd" />
+	<!-- property name="schemafile" value="${schemas}/AccountMaintenanceService.wsdl" /-->
+
+	<path id="classpath">
+		<pathelement path="${classes}" />
+		<fileset dir="${lib}/" includes="*.jar" />
+	</path>
+
+	<path id="srcpath">
+		<pathelement path="${src}" />
+		<pathelement path="${generated}" />
+	</path>
+
+	<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+		<classpath refid="classpath" />
+	</taskdef>
+
+	<target name="gen" description="Generate Java source from XML schema files" >
+		<echo message="Compiling the schema..." />
+		<mkdir dir="${generated}" />
+		<xjc schema="${schemafile}" package="${package}" destdir="${generated}" >
+			<produces dir="${generated}" includes="**/*.java" />
+			  <arg value="-wsdl" />
+		</xjc>
+	</target>
+	
+	<!--compile Java source files-->
+	<target name="compile" description="Compile all Java source files" depends="gen">
+		<echo message="Compiling the java source files..." />
+		<mkdir dir="${classes}" />
+		<javac destdir="${classes}" debug="on">
+			<src refid="srcpath" />
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="test" depends="compile" description="Run JUnit test cases.">
+		<delete dir="${reports}" />
+		<mkdir dir="${reports}" />
+
+		<junit printsummary="yes" fork="yes" haltonfailure="no" haltonerror="no" maxmemory="256m">
+		<jvmarg value="-Xms256m" />
+		<jvmarg value="-Xmx256m" />
+			<formatter type="${xml}" />
+			<classpath refid="classpath" />
+			<batchtest fork="yes" todir="${reports}">
+				<fileset dir="${src}">
+					<include name="**/*TestSuite.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+
+		<junitreport todir="${reports}">
+			<fileset dir="${reports}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${reports}/html" />
+		</junitreport>
+
+		<property name="browser" location="${browser}" />
+		<property name="file" location="${reports}/html/index.html" />
+
+		<exec executable="${browser}" spawn="true">
+			<arg value="${file}" />
+		</exec>
+	</target>
+
+	<target name="javadoc" description="Generates javadocs" depends="compile">
+		<echo message="Generating javadoc..." />
+		<mkdir dir="${javadocs}" />
+		<javadoc destdir="${javadocs}"            
+			author="true"
+           	version="true"
+           	use="true"
+			windowtitle="Tellurium Test Cases" 
+			useexternalfile="yes">
+			<fileset dir=".">
+				<include name="${src}/**/*.java" />
+				<include name="${generated}/**/*.java" />
+			</fileset>
+			<classpath refid="classpath" />
+		</javadoc>
+	</target>
+	
+	<target name="jar" description="Create Tellurium jar file" depends="compile" >
+	<!-- Don't use jar task. It screws up the ClassPath in the Manifest. -->
+        <exec executable="jar">
+        	<arg value="cfM" />
+        	<arg value="${jarfile}.jar" />
+        	<arg value="META-INF" />
+        	<arg value="${images}" />
+        	<arg value="${docs}" />
+        	<arg value="-C" />
+        	<arg value="${classes}" />
+        	<arg value="com" />
+        </exec>
+	</target>
+	
+	<target name="zip" description="Create a ZIP file for distribution" depends="jar, javadoc" >
+       <jar jarfile="${jarfile}.zip" basedir="." >
+           <include name="${jarfile}.jar"/>
+           <include name="${lib}/**"/>
+           <include name="${docs}/**"/>
+           <include name="${certs}/**"/>
+          <include name="${xml}/**"/>
+          <include name="${config}/**"/>
+       </jar> 
+	</target>
+
+    <!-- Does backup of src, etc, lib directories-->
+    <target name="backup" description="Adds lib and images dirs to backup file.">
+    <tstamp />
+		<mkdir dir="${backup.dir}" />
+        <jar jarfile="${backup.dir}/backup-${DSTAMP}-${TSTAMP}.jar"
+            basedir="."
+            update="false">
+            <include name="${src}/**"/>
+            <include name="${generated}/**"/>
+            <include name="${lib}/**"/>
+            <include name="${images}/**"/>
+            <include name="${schemas}/**"/>
+            <include name="${certs}/**"/>
+            <include name="${xml}/**"/>
+            <include name="build.xml"/>
+            <include name="${config}/**"/>
+        </jar>
+    </target>
+
+	<target name="run" description="Launch the application." depends="jar">
+        <java jar="${jarfile}.jar" fork="true" spawn="true" jvmargs="-Xms256M -Xmx256M -XX:MaxGCPauseMillis=1 -XX:YoungGenerationSizeIncrement=50"/>
+	</target>
+
+	<target name="clean" description="Deletes all the class and report artifacts.">
+		<delete dir="${javadocs}" />
+		<delete dir="${classes}" />
+		<delete dir="${reports}" />
+		<delete file="${jarfile}.jar" />
+		<delete file="${jarfile}.zip" />
+	</target>
+
+	<target name="realclean" description="Deletes all the schema generated artifacts." depends="clean" >
+		<delete dir="${generated}" />
+	</target>
+
+</project>
+

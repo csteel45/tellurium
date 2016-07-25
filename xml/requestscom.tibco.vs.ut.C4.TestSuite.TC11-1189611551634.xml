@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:VerificationRequest xmlns:ns1="http://niem.gov/niem/structures/2.0" xmlns:ns2="http://niem.gov/niem/niem-core/2.0" xmlns:ns3="http://niem.gov/niem/domains/immigration/2.0" xmlns:ns4="http://uscis.gov/uscis/xsd/services/verification/2.0/verification" xmlns:ns5="http://niem.gov/niem/domains/screening/2.0" xmlns:ns6="http://uscis.gov/uscis/xsd/services/exceptions/0.1" xmlns:ns7="http://niem.gov/niem/appinfo/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uscis.gov/uscis/xsd/services/verification/2.0/verification">
+    <ns4:SourceSystemID>TestConsole</ns4:SourceSystemID>
+    <ns4:SourceUserID>User</ns4:SourceUserID>
+    <ns4:SourceTransactionID>com.tibco.vs.ut.C4.TestSuite.TC11-1189611551634</ns4:SourceTransactionID>
+    <ns4:QueryTarget>CLAIMS4</ns4:QueryTarget>
+    <ns4:PersonSearchCriteria>
+        <ns2:Person>
+            <ns2:PersonBirthDate>
+                <ns2:Date>1949-01-01</ns2:Date>
+            </ns2:PersonBirthDate>
+            <ns2:PersonName>
+                <ns2:PersonGivenName>FIRST</ns2:PersonGivenName>
+                <ns2:PersonSurName>AME</ns2:PersonSurName>
+            </ns2:PersonName>
+            <ns2:PersonName>
+                <ns2:PersonGivenName>FIRST</ns2:PersonGivenName>
+                <ns2:PersonSurName>AME</ns2:PersonSurName>
+            </ns2:PersonName>
+        </ns2:Person>
+        <ns2:PersonSSNIdentification xsi:nil="true"/>
+        <ns3:AlienNumber xsi:nil="true"/>
+        <ns5:VisaNumberID xsi:nil="true"/>
+        <ns2:PassportNumberIdentification xsi:nil="true"/>
+        <ns3:CitizenshipCertificateIdentification xsi:nil="true"/>
+    </ns4:PersonSearchCriteria>
+</ns4:VerificationRequest>

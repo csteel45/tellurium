@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ns0:VerificationResponse xmlns:ns0="http://uscis.gov/uscis/xsd/services/verification/2.0/verification">
+    <ns0:SourceSystemID>VIS</ns0:SourceSystemID>
+    <ns0:SourceTransactionID>vs.ut.C4.TestSuite.TC9-1186690631147</ns0:SourceTransactionID>
+    <ns0:QueryTarget>CLAIMS4</ns0:QueryTarget>
+    <ns0:PersonSearchResult>
+        <ns1:Person xmlns:ns1="http://niem.gov/niem/niem-core/2.0">
+            <ns1:PersonBirthDate>
+                <ns1:Date>1966-09-15</ns1:Date>
+            </ns1:PersonBirthDate>
+            <ns1:PersonName>
+                <ns1:PersonGivenName>NGUYEN</ns1:PersonGivenName>
+                <ns1:PersonMiddleName>T</ns1:PersonMiddleName>
+                <ns1:PersonSurName>LANG</ns1:PersonSurName>
+            </ns1:PersonName>
+            <ns1:PersonNationalityText>VIETN</ns1:PersonNationalityText>
+            <ns1:PersonSexText>M</ns1:PersonSexText>
+        </ns1:Person>
+        <ns1:PersonSSNIdentification xmlns:ns1="http://niem.gov/niem/niem-core/2.0">
+            <ns1:IdentificationID>625385132</ns1:IdentificationID>
+        </ns1:PersonSSNIdentification>
+        <ns1:AlienNumber xmlns:ns1="http://niem.gov/niem/domains/immigration/2.0">
+            <ns2:IdentificationID xmlns:ns2="http://niem.gov/niem/niem-core/2.0">A028252851</ns2:IdentificationID>
+        </ns1:AlienNumber>
+        <ns1:AlienBirthCountryName xmlns:ns1="http://niem.gov/niem/domains/immigration/2.0">VIETN</ns1:AlienBirthCountryName>
+        <ns1:AlienImmigrationStatus xmlns:ns1="http://niem.gov/niem/domains/immigration/2.0">
+            <ns1:ImmigrationStatusCode>CERTISSUED</ns1:ImmigrationStatusCode>
+        </ns1:AlienImmigrationStatus>
+        <ns0:NaturalizationVerification>
+            <ns1:CitizenshipCertificateIdentification xmlns:ns1="http://niem.gov/niem/domains/immigration/2.0">
+                <ns2:IdentificationID xmlns:ns2="http://niem.gov/niem/niem-core/2.0">00004001</ns2:IdentificationID>
+            </ns1:CitizenshipCertificateIdentification>
+            <ns1:CitizenshipNaturalizationDate xmlns:ns1="http://niem.gov/niem/domains/immigration/2.0">
+                <ns2:Date xmlns:ns2="http://niem.gov/niem/niem-core/2.0">2001-02-27</ns2:Date>
+            </ns1:CitizenshipNaturalizationDate>
+        </ns0:NaturalizationVerification>
+    </ns0:PersonSearchResult>
+</ns0:VerificationResponse>
