@@ -71,6 +71,7 @@ import com.tibco.tellurium.view.monitor.MeterPanel;
  * @see tibco.tellurium.model.Dispatcher
  * @see tibco.tellurium.view.ResultsPanel
  */
+@SuppressWarnings("unused")
 public class TestConsole extends JFrame implements ActionListener, Observer {
 
 	private static final long serialVersionUID = -2522594006163125832L;

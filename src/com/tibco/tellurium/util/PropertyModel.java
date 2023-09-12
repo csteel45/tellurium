@@ -47,7 +47,7 @@ public class PropertyModel extends AbstractTableModel {
 	static final long serialVersionUID = 1L;
 	private final Vector<String> columnNames;
 	private Properties properties = new Properties();
-	private TreeMap map = new TreeMap(properties);
+	private TreeMap<Object, Object> map = new TreeMap<Object, Object>(properties);
 
 	public PropertyModel() {
 		columnNames = new Vector<String>();
@@ -58,7 +58,7 @@ public class PropertyModel extends AbstractTableModel {
 	public void load(InputStream inputStream) {
 		try {
 			properties.load(inputStream);
-			map = new TreeMap(properties);
+			map = new TreeMap<Object, Object>(properties);
 		}
 		catch (Exception e) {
 			System.out.println("Exception loading from input stream: " + e);
@@ -100,12 +100,13 @@ public class PropertyModel extends AbstractTableModel {
 		fireTableDataChanged();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Object clone() throws CloneNotSupportedException {
 		super.clone();
 		PropertyModel copyObj = new PropertyModel();
 		copyObj.properties = (Properties) properties.clone();
-		copyObj.map = (TreeMap) map.clone();
+		copyObj.map = (TreeMap<Object, Object>) map.clone();
 		return (copyObj);
 	}
 

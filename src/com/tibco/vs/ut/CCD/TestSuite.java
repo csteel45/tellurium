@@ -16,6 +16,7 @@ import com.tibco.vs.ut.PersonNameType;
 import com.tibco.vs.ut.PersonSearchResult;
 import com.tibco.vs.ut.PersonType;
 
+@SuppressWarnings("unused")
 public class TestSuite extends JMSConnection {
 	public final static String QUERY_TARGET = "CCD";
 

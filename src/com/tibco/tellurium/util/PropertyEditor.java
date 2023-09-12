@@ -53,6 +53,7 @@ import com.tibco.tellurium.view.LookAndFeelMenu;
  * @date $Date: 2002/03/16 04:59:32 $
  * @since 1.4
  */
+@SuppressWarnings("unused")
 public class PropertyEditor extends javax.swing.JFrame implements
 		javax.swing.event.ListSelectionListener {
 	static final long serialVersionUID = 1L;

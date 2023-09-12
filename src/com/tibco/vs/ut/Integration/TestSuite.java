@@ -12,6 +12,7 @@ import com.tibco.tellurium.net.RequestMessage;
 import com.tibco.tellurium.net.ResponseMessage;
 import com.tibco.vs.ut.PersonSearchResult;
 
+@SuppressWarnings("unused")
 public class TestSuite extends JMSConnection {
 	private static final String CLAIMS_USER_FN = "NGUYEN";
 	private static final String CLAIMS_USER_LN = "LAMG";

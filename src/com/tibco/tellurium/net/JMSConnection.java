@@ -92,7 +92,6 @@ public class JMSConnection implements Connection {
 	 *
 	 * @throws Exception
 	 */
-	@SuppressWarnings("deprecation")
 	@BeforeClass
 	public static void setUp() throws Exception {
 		System.err.println("Setting up test.");

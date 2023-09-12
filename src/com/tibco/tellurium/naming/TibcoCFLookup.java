@@ -10,7 +10,7 @@ import javax.naming.NamingException;
 public class TibcoCFLookup implements javax.naming.spi.InitialContextFactory {
 
     @SuppressWarnings("unchecked")
-	public Context getInitialContext(Hashtable environment) {
+	public Context getInitialContext(@SuppressWarnings("rawtypes") Hashtable environment) {
 
         try {
 

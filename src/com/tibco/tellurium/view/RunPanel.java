@@ -39,8 +39,9 @@ import javax.swing.JTextField;
  * @author Christopher Steel, Principal Architect - FortMoon
  * @version Aug 24, 2007 8:01:07 PM
  *
- * @see tibco.tellurium.RequestPanel
+ * @see com.tibco.tellurium.RequestPanel
  */
+@SuppressWarnings("unused")
 public class RunPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private final JTextField delay;

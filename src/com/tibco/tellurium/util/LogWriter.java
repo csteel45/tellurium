@@ -54,13 +54,13 @@ class LogWriter implements Runnable {
 	private BufferedOutputStream outStream;
 	private static boolean initialized = false;
 	private static Thread me = null;
-	private Vector msgQ = null;
+	private Vector<byte[]> msgQ = null;
 	private final PrintStream StdOut = System.out;
 	private final PrintStream StdErr = System.err;
 
 	LogWriter() {
 		super();
-		msgQ = new Vector(initialCapacity);
+		msgQ = new Vector<byte[]>(initialCapacity);
 // System.out.println("LogWriter constructor called.");
 	} // Constructor
 
@@ -93,7 +93,7 @@ class LogWriter implements Runnable {
 		if (!initialized) {
 			return;
 		}
-		this.Stop();
+		LogWriter.Stop();
 		try {
 			processMsgQ();
 			if (outStream != null) {

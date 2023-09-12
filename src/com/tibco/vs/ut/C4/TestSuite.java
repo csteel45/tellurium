@@ -179,7 +179,6 @@ public class TestSuite extends JMSConnection {
 		Assert.assertTrue(response.getPersonSearchResult().size() == 0);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void TC9() throws Exception {
 		RequestMessage request = new RequestMessage();

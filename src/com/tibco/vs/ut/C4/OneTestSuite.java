@@ -9,7 +9,7 @@ import com.tibco.tellurium.net.JMSConnection;
 import com.tibco.tellurium.net.RequestMessage;
 import com.tibco.tellurium.net.ResponseMessage;
 
-
+@SuppressWarnings("unused")
 public class OneTestSuite extends JMSConnection {
 	private static final String QUERY_TARGET = "CLAIMS4";
 	private static final String CLAIMS_USER_FN = "NGUYEN";

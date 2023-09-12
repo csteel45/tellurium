@@ -317,7 +317,7 @@ public class MemoryMonitor extends JPanel {
 
 			while ((thread == me) && !isShowing()) {
 				try {
-					thread.sleep(500);
+					Thread.sleep(500);
 				}
 				catch (InterruptedException e) {
 					return;
@@ -338,7 +338,7 @@ public class MemoryMonitor extends JPanel {
 				}
 				repaint();
 				try {
-					thread.sleep(sleepAmount);
+					Thread.sleep(sleepAmount);
 				}
 				catch (InterruptedException e) {
 // break;
@@ -361,12 +361,12 @@ public class MemoryMonitor extends JPanel {
 
 			@Override
 			public void windowDeiconified(WindowEvent e) {
-				demo.surface.start();
+				MemoryMonitor.surface.start();
 			}
 
 			@Override
 			public void windowIconified(WindowEvent e) {
-				demo.surface.stop();
+				MemoryMonitor.surface.stop();
 			}
 		};
 		JFrame f = new JFrame("Java2D Demo - MemoryMonitor");
@@ -375,7 +375,7 @@ public class MemoryMonitor extends JPanel {
 		f.pack();
 		f.setSize(new Dimension(200, 200));
 		f.setVisible(true);
-		demo.surface.start();
+		MemoryMonitor.surface.start();
 	}
 
 	public static void main(String s[]) {

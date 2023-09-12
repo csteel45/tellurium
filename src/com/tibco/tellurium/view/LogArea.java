@@ -38,6 +38,7 @@ import javax.swing.JTextArea;
  * @see java.io.OutputStream
  * @see javax.swing.JTextArea
  */
+@SuppressWarnings("unused")
 public class LogArea extends OutputStream implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static LogArea log = null;

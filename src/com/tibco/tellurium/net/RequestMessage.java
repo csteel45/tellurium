@@ -217,7 +217,6 @@ public class RequestMessage extends VerificationRequest implements Request {
 		personName.getPersonMiddleName().add(middleNameT);
 	}
 
-	@SuppressWarnings("deprecation")
 	public void setBirthDate(String birthDateString) throws Exception {
 
 		StringTokenizer st = new StringTokenizer(birthDateString, "-");

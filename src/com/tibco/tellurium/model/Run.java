@@ -30,7 +30,7 @@ public class Run {
 	private int startDelay = 0;
 	private boolean simultaneous = false;
 
-	public Run(boolean simultaneou) {
+	public Run(boolean simultaneous) {
 		this.simultaneous = simultaneous;
 	}
 

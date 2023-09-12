@@ -38,10 +38,6 @@ public class LoadTest implements Runnable {
 	private Dispatcher dispatcher;
 	private static String loadTestDir;
 
-	private LoadTest() {
-
-	}
-
 	public LoadTest(Dispatcher dispatcher) {
 		this.dispatcher = dispatcher;
 	}

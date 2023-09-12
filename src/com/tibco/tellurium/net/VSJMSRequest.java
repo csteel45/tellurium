@@ -221,7 +221,6 @@ public class VSJMSRequest extends JMSRequest {
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
 	public void setBirthDate(String birthDateString) throws Exception {
 
 		StringTokenizer st = new StringTokenizer(birthDateString, "-");

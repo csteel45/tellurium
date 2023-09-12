@@ -56,6 +56,7 @@ public class HelpDialog extends JFrame implements HyperlinkListener {
 	private JEditorPane html;
 	private final String imageFileName = "images/magnify.gif";
 
+	@SuppressWarnings("deprecation")
 	public HelpDialog(String helpFilePath) {
 		super("Help");
 
