@@ -17,13 +17,13 @@
  * 
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.view;
+package com.tibco.tellurium.view;
 
 import java.util.Vector;
 
 import javax.swing.table.AbstractTableModel;
 
-import com.FortMoon.tellurium.model.RequestStats;
+import com.tibco.tellurium.model.RequestStats;
 
 
 /**

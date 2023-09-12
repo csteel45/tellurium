@@ -17,7 +17,7 @@
  * 
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.net;
+package com.tibco.tellurium.net;
 
 /**
  * TODO Add docs.
@@ -34,10 +34,10 @@ public class ConnectionFactory {
 		String className = null;
 // FIXME: Make this configurable.
 		if (type.equals(ConnectionType.JMS)) {
-			className = "com.FortMoon.tellurium.net.JMSConnection";
+			className = "tibco.tellurium.net.JMSConnection";
 		}
 		if (type.equals(ConnectionType.HTTP)) {
-			className = "com.FortMoon.tellurium.net.HttpConnection";
+			className = "tibco.tellurium.net.HttpConnection";
 		}
 		try {
 			Class<Connection> connClass = (Class<Connection>) Class

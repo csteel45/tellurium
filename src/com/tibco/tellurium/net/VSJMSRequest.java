@@ -17,7 +17,7 @@
  *
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.net;
+package com.tibco.tellurium.net;
 
 import java.io.FileInputStream;
 import java.util.StringTokenizer;
@@ -33,13 +33,13 @@ import javax.xml.namespace.QName;
 
 import org.junit.Assert;
 
-import com.FortMoon.vs.ut.DateType;
-import com.FortMoon.vs.ut.IdentificationType;
-import com.FortMoon.vs.ut.PersonNameTextType;
-import com.FortMoon.vs.ut.PersonNameType;
-import com.FortMoon.vs.ut.PersonSearchCriteria;
-import com.FortMoon.vs.ut.PersonType;
-import com.FortMoon.vs.ut.VerificationRequest;
+import com.tibco.vs.ut.DateType;
+import com.tibco.vs.ut.IdentificationType;
+import com.tibco.vs.ut.PersonNameTextType;
+import com.tibco.vs.ut.PersonNameType;
+import com.tibco.vs.ut.PersonSearchCriteria;
+import com.tibco.vs.ut.PersonType;
+import com.tibco.vs.ut.VerificationRequest;
 
 /**
  * This class wraps the JAXB-generated VerificationRequest class. It converts
@@ -49,12 +49,12 @@ import com.FortMoon.vs.ut.VerificationRequest;
  * @author Christopher Steel, Principal Architect - FortMoon
  * @version Aug 24, 2007 3:02:58 PM
  *
- * @see com.FortMoon.vs.ut.VerificationRequest
+ * @see com.tibco.vs.ut.VerificationRequest
  */
 public class VSJMSRequest extends JMSRequest {
 	public static final String SOURCE_USER_ID = "User";
 	public static final String SOURCE_SYSTEM_ID = "TestConsole";
-	public final static String JAXB_CONTEXT = "com.FortMoon.vs.testconsole";
+	public final static String JAXB_CONTEXT = "tibco.vs.testconsole";
 	private PersonType person;
 	private PersonSearchCriteria criteria;
 	private PersonNameType personName;
@@ -75,6 +75,7 @@ public class VSJMSRequest extends JMSRequest {
 	 * @return The Query Target from the marshaled XML request file.
 	 * @throws Exception
 	 */
+	@SuppressWarnings("unused")
 	public static String getMarshalledQueryTarget(String requestStr)
 			throws Exception {
 		try {
@@ -139,7 +140,7 @@ public class VSJMSRequest extends JMSRequest {
 	 */
 	@Override
 	public void setQueryTarget(String queryTarget) {
-		com.FortMoon.vs.ut.String queryTargetS = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String queryTargetS = new com.tibco.vs.ut.String();
 		queryTargetS.setValue(queryTarget);
 		this.setQueryTarget(queryTargetS);
 	}
@@ -150,7 +151,7 @@ public class VSJMSRequest extends JMSRequest {
 	 */
 	@Override
 	public void setSourceSystemID(String sourceSystemID) {
-		com.FortMoon.vs.ut.String sourceSystemIDS = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String sourceSystemIDS = new com.tibco.vs.ut.String();
 		sourceSystemIDS.setValue(sourceSystemID);
 		this.setSourceSystemID(sourceSystemIDS);
 	}
@@ -161,7 +162,7 @@ public class VSJMSRequest extends JMSRequest {
 	 */
 	@Override
 	public void setTransactionID(String transactionID) {
-		com.FortMoon.vs.ut.String transactionIDS = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String transactionIDS = new com.tibco.vs.ut.String();
 		transactionIDS.setValue(transactionID);
 		this.setSourceTransactionID(transactionIDS);
 	}
@@ -172,7 +173,7 @@ public class VSJMSRequest extends JMSRequest {
 	 */
 	@Override
 	public void setSourceUserID(String sourceUserID) {
-		com.FortMoon.vs.ut.String sourceUserIDS = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String sourceUserIDS = new com.tibco.vs.ut.String();
 		sourceUserIDS.setValue(sourceUserID);
 		this.setSourceUserID(sourceUserIDS);
 	}
@@ -236,12 +237,12 @@ public class VSJMSRequest extends JMSRequest {
 		// with the JDBC query in CLAIMS4.
 		cal.setTimezone(DatatypeConstants.FIELD_UNDEFINED);
 
-		com.FortMoon.vs.ut.Date date = new com.FortMoon.vs.ut.Date();
+		com.tibco.vs.ut.Date date = new com.tibco.vs.ut.Date();
 		date.setValue(cal);
 
-		JAXBElement<com.FortMoon.vs.ut.Date> element = new JAXBElement<com.FortMoon.vs.ut.Date>(
+		JAXBElement<com.tibco.vs.ut.Date> element = new JAXBElement<com.tibco.vs.ut.Date>(
 				new QName("http://niem.gov/niem/niem-core/2.0", "Date"),
-				com.FortMoon.vs.ut.Date.class, date);
+				com.tibco.vs.ut.Date.class, date);
 
 		DateType birthDateDT = new DateType();
 		birthDateDT.getDateRepresentation().add(element);
@@ -258,7 +259,7 @@ public class VSJMSRequest extends JMSRequest {
 	@Override
 	public void setAlienNumber(String alienNumber) {
 		IdentificationType identification = new IdentificationType();
-		com.FortMoon.vs.ut.String identificationID = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String identificationID = new com.tibco.vs.ut.String();
 		identificationID.setValue(alienNumber);
 		identification.getIdentificationID().add(identificationID);
 
@@ -272,7 +273,7 @@ public class VSJMSRequest extends JMSRequest {
 	@Override
 	public void setSSN(String ssn) {
 		IdentificationType identification = new IdentificationType();
-		com.FortMoon.vs.ut.String identificationID = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String identificationID = new com.tibco.vs.ut.String();
 		identificationID.setValue(ssn);
 		identification.getIdentificationID().add(identificationID);
 
@@ -285,7 +286,7 @@ public class VSJMSRequest extends JMSRequest {
 	 */
 	@Override
 	public void setVisaNumber(String visaNumber) {
-		com.FortMoon.vs.ut.String visaNumberS = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String visaNumberS = new com.tibco.vs.ut.String();
 		visaNumberS.setValue(visaNumber);
 		criteria.setVisaNumberID(visaNumberS);
 	}
@@ -297,7 +298,7 @@ public class VSJMSRequest extends JMSRequest {
 	@Override
 	public void setCitizenshipNumber(String citizenshipNumber) {
 		IdentificationType identification = new IdentificationType();
-		com.FortMoon.vs.ut.String identificationID = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String identificationID = new com.tibco.vs.ut.String();
 		identificationID.setValue(citizenshipNumber);
 		identification.getIdentificationID().add(identificationID);
 
@@ -311,7 +312,7 @@ public class VSJMSRequest extends JMSRequest {
 	@Override
 	public void setPassportNumber(String passportNumber) {
 		IdentificationType identification = new IdentificationType();
-		com.FortMoon.vs.ut.String identificationID = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String identificationID = new com.tibco.vs.ut.String();
 		identificationID.setValue(passportNumber);
 		identification.getIdentificationID().add(identificationID);
 
@@ -325,7 +326,7 @@ public class VSJMSRequest extends JMSRequest {
 	@Override
 	public void setSevisID(String studentID) {
 		IdentificationType identification = new IdentificationType();
-		com.FortMoon.vs.ut.String identificationID = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String identificationID = new com.tibco.vs.ut.String();
 		identificationID.setValue(studentID);
 		identification.getIdentificationID().add(identificationID);
 
@@ -338,7 +339,7 @@ public class VSJMSRequest extends JMSRequest {
 	 */
 	@Override
 	public void setVisaFoilNumber(String visaFoilNumber) {
-		com.FortMoon.vs.ut.String visaFoilNumberS = new com.FortMoon.vs.ut.String();
+		com.tibco.vs.ut.String visaFoilNumberS = new com.tibco.vs.ut.String();
 		visaFoilNumberS.setValue(visaFoilNumber);
 
 		criteria.setVisaFoilNumber(visaFoilNumberS);

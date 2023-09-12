@@ -5,3 +5,4 @@ Simultaneous,null,150,0,0.49666667
 Simultaneous,null,200,0,1.7681062
 Simultaneous,null,200,0,0.519315
 Simultaneous,null,200,0,0.534705
+Simultaneous,null,10,10,0.0

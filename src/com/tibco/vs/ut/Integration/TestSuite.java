@@ -1,4 +1,4 @@
-package com.FortMoon.vs.ut.Integration;
+package com.tibco.vs.ut.Integration;
 
 import java.util.List;
 
@@ -7,10 +7,10 @@ import junit.framework.JUnit4TestAdapter;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.FortMoon.tellurium.net.JMSConnection;
-import com.FortMoon.tellurium.net.RequestMessage;
-import com.FortMoon.tellurium.net.ResponseMessage;
-import com.FortMoon.vs.ut.PersonSearchResult;
+import com.tibco.tellurium.net.JMSConnection;
+import com.tibco.tellurium.net.RequestMessage;
+import com.tibco.tellurium.net.ResponseMessage;
+import com.tibco.vs.ut.PersonSearchResult;
 
 public class TestSuite extends JMSConnection {
 	private static final String CLAIMS_USER_FN = "NGUYEN";

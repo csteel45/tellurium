@@ -1,15 +1,15 @@
-package com.FortMoon.vs.ut.PIERS;
+package com.tibco.vs.ut.PIERS;
 
 import junit.framework.JUnit4TestAdapter;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.FortMoon.tellurium.net.JMSConnection;
-import com.FortMoon.tellurium.net.RequestMessage;
-import com.FortMoon.tellurium.net.ResponseMessage;
-import com.FortMoon.vs.ut.ESBException;
-import com.FortMoon.vs.ut.PersonSearchResult;
+import com.tibco.tellurium.net.JMSConnection;
+import com.tibco.tellurium.net.RequestMessage;
+import com.tibco.tellurium.net.ResponseMessage;
+import com.tibco.vs.ut.ESBException;
+import com.tibco.vs.ut.PersonSearchResult;
 
 public class TestSuite extends JMSConnection {
 	public final static String QUERY_TARGET = "PIERS";

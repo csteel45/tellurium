@@ -18,13 +18,13 @@
  * Copyright Version 1.0
  */
 
-package com.FortMoon.tellurium.model;
+package com.tibco.tellurium.model;
 
-import com.FortMoon.tellurium.net.Connection;
-import com.FortMoon.tellurium.net.ConnectionFactory;
-import com.FortMoon.tellurium.net.ConnectionType;
-import com.FortMoon.tellurium.net.ResponseMessage;
-import com.FortMoon.tellurium.util.ConfigInfo;
+import com.tibco.tellurium.net.Connection;
+import com.tibco.tellurium.net.ConnectionFactory;
+import com.tibco.tellurium.net.ConnectionType;
+import com.tibco.tellurium.net.ResponseMessage;
+import com.tibco.tellurium.util.ConfigInfo;
 
 /**
  * This class is the Runnable form of a VS request. It sends a request and waits
@@ -35,9 +35,9 @@ import com.FortMoon.tellurium.util.ConfigInfo;
  * @author Christopher Steel, Principal Architect - FortMoon
  * @version Aug 24, 2007 3:02:58 PM
  *
- * @see com.FortMoon.tellurium.model.ClientManger
- * @see com.FortMoon.tellurium.model.Dispatcher
- * @see com.FortMoon.tellurium.net.ResponseMessage
+ * @see tibco.tellurium.model.ClientManger
+ * @see tibco.tellurium.model.Dispatcher
+ * @see tibco.tellurium.net.ResponseMessage
  */
 public class Client implements Runnable {
 	private ClientManager manager;

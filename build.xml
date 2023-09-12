@@ -26,8 +26,8 @@
 	</path>
 
 	<path id="srcpath">
-		<pathelement path="${src}" />
 		<pathelement path="${generated}" />
+		<pathelement path="${src}" />
 	</path>
 
 	<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">

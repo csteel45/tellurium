@@ -1,13 +1,13 @@
-package com.FortMoon.vs.ut.C4;
+package com.tibco.vs.ut.C4;
 
 import junit.framework.JUnit4TestAdapter;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.FortMoon.tellurium.net.JMSConnection;
-import com.FortMoon.tellurium.net.RequestMessage;
-import com.FortMoon.tellurium.net.ResponseMessage;
+import com.tibco.tellurium.net.JMSConnection;
+import com.tibco.tellurium.net.RequestMessage;
+import com.tibco.tellurium.net.ResponseMessage;
 
 
 public class OneTestSuite extends JMSConnection {

@@ -25,7 +25,7 @@
  *
  * Copyright Version 1.0
  ******************************************************************************/
-package com.FortMoon.tellurium.util;
+package com.tibco.tellurium.util;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -42,8 +42,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JSeparator;
 
-import com.FortMoon.tellurium.view.AboutDialog;
-import com.FortMoon.tellurium.view.LookAndFeelMenu;
+import com.tibco.tellurium.view.AboutDialog;
+import com.tibco.tellurium.view.LookAndFeelMenu;
 
 /**
  * GUI for editing and saving properties files.

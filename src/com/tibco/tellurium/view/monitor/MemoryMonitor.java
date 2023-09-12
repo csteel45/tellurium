@@ -26,7 +26,7 @@
  * Copyright Version 1.0
  ******************************************************************************/
 
-package com.FortMoon.tellurium.view.monitor;
+package com.tibco.tellurium.view.monitor;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

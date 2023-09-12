@@ -17,7 +17,7 @@
  *
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.net;
+package com.tibco.tellurium.net;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -30,7 +30,7 @@ import javax.xml.bind.Marshaller;
  * @author Christopher Steel, Principal Architect - FortMoon
  * @version Aug 24, 2007 3:02:58 PM
  *
- * @see com.FortMoon.vs.ut.VerificationRequest
+ * @see com.tibco.vs.ut.VerificationRequest
  */
 public class JMSRequest extends RequestMessage {
 

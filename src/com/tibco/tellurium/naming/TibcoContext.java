@@ -1,13 +1,9 @@
-package com.FortMoon.tellurium.naming;
+package com.tibco.tellurium.naming;
 
-
-import com.FortMoon.tibjms.TibjmsConnectionFactory;
-import com.FortMoon.tibjms.naming.TibjmsContext;
 
 import java.util.Hashtable;
 
 import javax.jms.ConnectionFactory;
-
 import javax.naming.Binding;
 import javax.naming.Context;
 import javax.naming.Name;
@@ -16,11 +12,14 @@ import javax.naming.NameParser;
 import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
 
-public class FortMoonContext extends java.lang.Object implements javax.naming.Context {
+import com.tibco.tibjms.TibjmsConnectionFactory;
+import com.tibco.tibjms.naming.TibjmsContext;
+
+public class TibcoContext extends java.lang.Object implements javax.naming.Context {
 
     private Context FortMoonCtx = null;
 
-    public FortMoonContext(Context ctx) {
+    public TibcoContext(Context ctx) {
         FortMoonCtx = ctx;
     }
 

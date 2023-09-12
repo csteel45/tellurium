@@ -25,7 +25,7 @@
  *
  * Copyright Version 1.0
  ******************************************************************************/
-package com.FortMoon.tellurium.util;
+package com.tibco.tellurium.util;
 
 /*
  * PropertyNotFoundException is thrown in the case that a property value is not

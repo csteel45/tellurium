@@ -17,7 +17,7 @@
  * 
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.model;
+package com.tibco.tellurium.model;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,7 +26,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import com.FortMoon.tellurium.view.monitor.MonitorFeedListener;
+import com.tibco.tellurium.view.monitor.MonitorFeedListener;
 
 /**
  * This class is responsible for dispatching Run requests, monitoring status and
@@ -258,7 +258,7 @@ public class Dispatcher extends AsyncObservable implements ClientManager {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.FortMoon.tellurium.model.ClientManager#registerMonitorListener(com.FortMoon.tellurium.view.monitor.MonitorFeedListener)
+	 * @see tibco.tellurium.model.ClientManager#registerMonitorListener(tibco.tellurium.view.monitor.MonitorFeedListener)
 	 */
 	public void registerMonitorListener(MonitorFeedListener listener) {
 		this.monitorFeedListener = listener;

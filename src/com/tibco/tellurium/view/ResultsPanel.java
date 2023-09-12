@@ -17,7 +17,7 @@
  * 
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.view;
+package com.tibco.tellurium.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -30,8 +30,8 @@ import javax.swing.JTable;
 import javax.swing.border.BevelBorder;
 import javax.swing.table.TableColumnModel;
 
-import com.FortMoon.tellurium.model.Client;
-import com.FortMoon.tellurium.model.RequestStats;
+import com.tibco.tellurium.model.Client;
+import com.tibco.tellurium.model.RequestStats;
 
 /**
  * TODO Add docs.

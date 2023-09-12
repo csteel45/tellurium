@@ -25,7 +25,7 @@
  * 
  * Copyright Version 1.0
  ******************************************************************************/
-package com.FortMoon.tellurium.util;
+package com.tibco.tellurium.util;
 
 import java.io.InputStream;
 import java.io.OutputStream;

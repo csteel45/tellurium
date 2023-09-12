@@ -1,4 +1,4 @@
-package com.FortMoon.vs.ut.CCD;
+package com.tibco.vs.ut.CCD;
 
 import java.util.List;
 
@@ -7,14 +7,14 @@ import junit.framework.JUnit4TestAdapter;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.FortMoon.tellurium.net.JMSConnection;
-import com.FortMoon.tellurium.net.RequestMessage;
-import com.FortMoon.tellurium.net.ResponseMessage;
-import com.FortMoon.vs.ut.ESBException;
-import com.FortMoon.vs.ut.PersonNameTextType;
-import com.FortMoon.vs.ut.PersonNameType;
-import com.FortMoon.vs.ut.PersonSearchResult;
-import com.FortMoon.vs.ut.PersonType;
+import com.tibco.tellurium.net.JMSConnection;
+import com.tibco.tellurium.net.RequestMessage;
+import com.tibco.tellurium.net.ResponseMessage;
+import com.tibco.vs.ut.ESBException;
+import com.tibco.vs.ut.PersonNameTextType;
+import com.tibco.vs.ut.PersonNameType;
+import com.tibco.vs.ut.PersonSearchResult;
+import com.tibco.vs.ut.PersonType;
 
 public class TestSuite extends JMSConnection {
 	public final static String QUERY_TARGET = "CCD";

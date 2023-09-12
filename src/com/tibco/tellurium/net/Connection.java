@@ -17,11 +17,11 @@
  *
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.net;
+package com.tibco.tellurium.net;
 
 import java.io.File;
 
-import com.FortMoon.tellurium.model.Request;
+import com.tibco.tellurium.model.Request;
 
 /**
  * TODO Add docs.

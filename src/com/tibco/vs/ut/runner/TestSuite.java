@@ -1,10 +1,10 @@
-package com.FortMoon.vs.ut.runner;
+package com.tibco.vs.ut.runner;
 
 import junit.framework.JUnit4TestAdapter;
 
 import org.junit.Test;
 
-import com.FortMoon.tellurium.net.JMSConnection;
+import com.tibco.tellurium.net.JMSConnection;
 
 
 public class TestSuite extends JMSConnection {

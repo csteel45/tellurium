@@ -17,7 +17,7 @@
  *
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.view;
+package com.tibco.tellurium.view;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -39,7 +39,7 @@ import javax.swing.JTextField;
  * @author Christopher Steel, Principal Architect - FortMoon
  * @version Aug 24, 2007 8:01:07 PM
  *
- * @see com.FortMoon.tellurium.RequestPanel
+ * @see tibco.tellurium.RequestPanel
  */
 public class RunPanel extends JPanel {
 	private static final long serialVersionUID = 1L;

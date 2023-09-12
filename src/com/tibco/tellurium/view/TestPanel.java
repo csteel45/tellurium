@@ -17,7 +17,7 @@
  *
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.view;
+package com.tibco.tellurium.view;
 
 import java.awt.Dimension;
 
@@ -35,7 +35,7 @@ import javax.swing.JPanel;
  * @author Christopher Steel, Principal Architect - FortMoon
  * @version Aug 24, 2007 3:02:58 PM
  *
- * @see com.FortMoon.tellurium.RunPanel
+ * @see tibco.tellurium.RunPanel
  */
 public class TestPanel extends JPanel {
 

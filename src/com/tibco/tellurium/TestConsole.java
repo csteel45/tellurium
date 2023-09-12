@@ -18,7 +18,7 @@
  * Copyright Version 1.0
  */
 
-package com.FortMoon.tellurium;
+package com.tibco.tellurium;
 
 import java.awt.BorderLayout;
 import java.awt.Cursor;
@@ -30,7 +30,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import com.FortMoon.tellurium.util.PropertyEditor;
+import com.tibco.tellurium.util.PropertyEditor;
 import java.io.PrintStream;
 import java.util.Observable;
 import java.util.Observer;
@@ -46,18 +46,18 @@ import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 
 import com.birosoft.liquid.LiquidLookAndFeel;
-import com.FortMoon.tellurium.model.Dispatcher;
-import com.FortMoon.tellurium.model.RequestStats;
-import com.FortMoon.tellurium.model.RunInfo;
-import com.FortMoon.tellurium.net.JMSConnection;
-import com.FortMoon.tellurium.util.SplashScreen;
-import com.FortMoon.tellurium.view.HelpDialog;
-import com.FortMoon.tellurium.view.LogArea;
-import com.FortMoon.tellurium.view.ResultsPanel;
-import com.FortMoon.tellurium.view.TestConsoleMenuBar;
-import com.FortMoon.tellurium.view.TestPanel;
-import com.FortMoon.tellurium.view.monitor.MemoryMonitor;
-import com.FortMoon.tellurium.view.monitor.MeterPanel;
+import com.tibco.tellurium.model.Dispatcher;
+import com.tibco.tellurium.model.RequestStats;
+import com.tibco.tellurium.model.RunInfo;
+import com.tibco.tellurium.net.JMSConnection;
+import com.tibco.tellurium.util.SplashScreen;
+import com.tibco.tellurium.view.HelpDialog;
+import com.tibco.tellurium.view.LogArea;
+import com.tibco.tellurium.view.ResultsPanel;
+import com.tibco.tellurium.view.TestConsoleMenuBar;
+import com.tibco.tellurium.view.TestPanel;
+import com.tibco.tellurium.view.monitor.MemoryMonitor;
+import com.tibco.tellurium.view.monitor.MeterPanel;
 
 /**
  * This class is the UI for running performance tests. It servers as both the
@@ -68,8 +68,8 @@ import com.FortMoon.tellurium.view.monitor.MeterPanel;
  *
  * @author Christopher Steel - Principal Architect, FortMoon
  * @version 4.0
- * @see com.FortMoon.tellurium.model.Dispatcher
- * @see com.FortMoon.tellurium.view.ResultsPanel
+ * @see tibco.tellurium.model.Dispatcher
+ * @see tibco.tellurium.view.ResultsPanel
  */
 public class TestConsole extends JFrame implements ActionListener, Observer {
 

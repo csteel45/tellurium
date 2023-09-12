@@ -17,7 +17,7 @@
  *
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.view;
+package com.tibco.tellurium.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,7 +35,7 @@ import javax.swing.JMenuItem;
  * @author Christopher Steel, Principal Architect - FortMoon
  * @version Aug 27, 2007 9:44:11 AM
  *
- * @see com.FortMoon.tellurium.TestConsole
+ * @see tibco.tellurium.TestConsole
  * @see javax.swing.JMenuBar
  */
 public class TestConsoleMenuBar extends JMenuBar {

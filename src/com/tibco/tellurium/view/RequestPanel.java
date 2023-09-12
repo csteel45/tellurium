@@ -17,7 +17,7 @@
  * 
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.view;
+package com.tibco.tellurium.view;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;

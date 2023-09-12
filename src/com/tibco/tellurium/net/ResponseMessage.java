@@ -17,7 +17,7 @@
  * 
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.net;
+package com.tibco.tellurium.net;
 
 import java.util.List;
 
@@ -28,9 +28,9 @@ import javax.xml.bind.ValidationEventHandler;
 
 import org.junit.Assert;
 
-import com.FortMoon.vs.ut.ESBException;
-import com.FortMoon.vs.ut.PersonSearchResult;
-import com.FortMoon.vs.ut.VerificationResponse;
+import com.tibco.vs.ut.ESBException;
+import com.tibco.vs.ut.PersonSearchResult;
+import com.tibco.vs.ut.VerificationResponse;
 
 /**
  * This class wraps the JAXB-generated VerificationResponset class. It converts
@@ -40,10 +40,10 @@ import com.FortMoon.vs.ut.VerificationResponse;
  * @author Christopher Steel, Principal Architect - FortMoon
  * @version Aug 24, 2007 3:02:58 PM
  * 
- * @see com.FortMoon.vs.ut.VerificationResponse
+ * @see com.tibco.vs.ut.VerificationResponse
  */
 public class ResponseMessage implements ValidationEventHandler {
-	private final static java.lang.String JAXB_CONTEXT = "com.FortMoon.vs.ut";
+	private final static java.lang.String JAXB_CONTEXT = "com.tibco.vs.ut";
 	private VerificationResponse instance;
 	private final java.lang.String responseXML;
 

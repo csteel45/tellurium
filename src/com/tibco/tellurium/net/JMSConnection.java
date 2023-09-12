@@ -17,7 +17,7 @@
  *
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.net;
+package com.tibco.tellurium.net;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -44,8 +44,8 @@ import javax.naming.Context;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 
-import com.FortMoon.tellurium.model.Request;
-import com.FortMoon.tellurium.naming.FortMoonCFLookup;
+import com.tibco.tellurium.model.Request;
+import com.tibco.tellurium.naming.TibcoCFLookup;
 
 /**
  * This class servers as the base class for the Unit Test Suites. It provides
@@ -55,7 +55,7 @@ import com.FortMoon.tellurium.naming.FortMoonCFLookup;
  * @author Christopher Steel, Principal Architect - FortMoon
  * @version Aug 24, 2007 3:02:58 PM
  *
- * @see com.FortMoon.tellurium.naming.FortMoonCFLookup
+ * @see tibco.tellurium.naming.FortMoonCFLookup
  */
 public class JMSConnection implements Connection {
 
@@ -107,7 +107,7 @@ public class JMSConnection implements Connection {
 		try {
 			// System.err.println("creating initial queue context");
 			// create initial queue context
-			FortMoonCFLookup lookup = new FortMoonCFLookup();
+			TibcoCFLookup lookup = new TibcoCFLookup();
 			Properties props = new java.util.Properties();
 			props.load(new FileInputStream("jndi.properties"));
 			Context qctx = lookup.getInitialContext(props);
@@ -167,8 +167,8 @@ public class JMSConnection implements Connection {
 
 		java.lang.String requestString = request.toString();
 		// System.err.println("Marshalled string: " + requestString);
-		writeRequest(request);
-		send(requestString, request.getQueryTarget().getValue());
+		writeRequest((RequestMessage) request);
+		send(requestString, ((ResponseMessage) request).getQueryTarget());
 	}
 
 	public void sendRequestFiles(java.lang.String dirName) throws Exception {
@@ -185,7 +185,7 @@ public class JMSConnection implements Connection {
 				// System.err.println("Sending file: " + files[i]);
 				sendFile(new File(REQUEST_DIR + element));
 			}
-			for (java.lang.String element : files) {
+			for (@SuppressWarnings("unused") java.lang.String element : files) {
 				// System.err.println("Receiving file.");
 				this.getResults();
 			}

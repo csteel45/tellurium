@@ -18,7 +18,7 @@
  * Copyright Version 1.0
  */
 
-package com.FortMoon.tellurium.model;
+package com.tibco.tellurium.model;
 
 
 /**

@@ -18,11 +18,11 @@
  *
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.net;
+package com.tibco.tellurium.net;
 
 import java.io.File;
 
-import com.FortMoon.tellurium.model.Request;
+import com.tibco.tellurium.model.Request;
 
 /**
  * TODO Add docs.
@@ -34,7 +34,7 @@ import com.FortMoon.tellurium.model.Request;
 public class HttpConnection implements Connection {
 
 	/* (non-Javadoc)
-	 * @see com.FortMoon.tellurium.net.Connection#getResults()
+	 * @see tibco.tellurium.net.Connection#getResults()
 	 */
 	public ResponseMessage getResults() throws Exception {
 		// TODO Auto-generated method stub
@@ -42,7 +42,7 @@ public class HttpConnection implements Connection {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.FortMoon.tellurium.net.Connection#getResults(boolean)
+	 * @see tibco.tellurium.net.Connection#getResults(boolean)
 	 */
 	public ResponseMessage getResults(boolean b) throws Exception {
 		// TODO Auto-generated method stub
@@ -50,7 +50,7 @@ public class HttpConnection implements Connection {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.FortMoon.tellurium.net.Connection#send(com.FortMoon.tellurium.net.RequestMessage)
+	 * @see tibco.tellurium.net.Connection#send(tibco.tellurium.net.RequestMessage)
 	 */
 	public void send(Request request) throws Exception {
 		// TODO Auto-generated method stub
@@ -58,7 +58,7 @@ public class HttpConnection implements Connection {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.FortMoon.tellurium.net.Connection#send(java.lang.String, java.lang.String)
+	 * @see tibco.tellurium.net.Connection#send(java.lang.String, java.lang.String)
 	 */
 	public void send(String request, String queryTarget) throws Exception {
 		// TODO Auto-generated method stub
@@ -66,7 +66,7 @@ public class HttpConnection implements Connection {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.FortMoon.tellurium.net.Connection#sendFile(java.io.File)
+	 * @see tibco.tellurium.net.Connection#sendFile(java.io.File)
 	 */
 	public void sendFile(File file) throws Exception {
 		// TODO Auto-generated method stub
@@ -74,7 +74,7 @@ public class HttpConnection implements Connection {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.FortMoon.tellurium.net.Connection#sendRequestFile(java.lang.String)
+	 * @see tibco.tellurium.net.Connection#sendRequestFile(java.lang.String)
 	 */
 	public int sendRequestFile(String dirName) throws Exception {
 		// TODO Auto-generated method stub
@@ -82,7 +82,7 @@ public class HttpConnection implements Connection {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.FortMoon.tellurium.net.Connection#sendRequestFiles(java.lang.String)
+	 * @see tibco.tellurium.net.Connection#sendRequestFiles(java.lang.String)
 	 */
 	public void sendRequestFiles(String dirName) throws Exception {
 		// TODO Auto-generated method stub

@@ -17,11 +17,11 @@
  * 
  * Copyright Version 1.0
  */
-package com.FortMoon.tellurium.model;
+package com.tibco.tellurium.model;
 
 import java.io.Serializable;
 
-import com.FortMoon.tellurium.view.monitor.MonitorFeedListener;
+import com.tibco.tellurium.view.monitor.MonitorFeedListener;
 
 
 /**
